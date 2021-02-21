@@ -1,4 +1,5 @@
 import React from "react";
+// wraps bootstrap components to utilize Link
 import { LinkContainer } from "react-router-bootstrap";
 import {
     Navbar,

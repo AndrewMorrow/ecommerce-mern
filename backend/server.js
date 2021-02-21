@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
+// connects to the db
 connectDB();
 
 const app = express();
@@ -14,11 +15,13 @@ app.get("/", (req, res) => {
     res.send("Api is running...");
 });
 
+// returns all products
 app.get("/api/products", (req, res) => {
     res.json(products);
 });
 
 app.get("/api/products/:id", (req, res) => {
+    // returns a single product from parameters
     const product = products.find((product) => product._id === req.params.id);
     res.json(product);
 });

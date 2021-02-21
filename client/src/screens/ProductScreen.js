@@ -16,8 +16,10 @@ const ProductScreen = ({ match }) => {
 
     useEffect(() => {
         const fetchProduct = async () => {
+            // fetch a single product from the server
             const res = await fetch(`/api/products/${match.params.id}`);
             const data = await res.json();
+            // set fetched product to state
             setProduct(data);
         };
         fetchProduct();

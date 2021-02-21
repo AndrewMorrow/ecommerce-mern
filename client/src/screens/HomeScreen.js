@@ -4,10 +4,13 @@ import Product from "../components/Products";
 
 const HomeScreen = () => {
     const [products, setProducts] = useState([]);
+
     useEffect(() => {
+        // fetch all products from the server
         const fetchProducts = async () => {
             const res = await fetch("api/products");
             const data = await res.json();
+            // set the products state to the returned data
             setProducts(data);
         };
         fetchProducts();
